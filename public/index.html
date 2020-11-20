@@ -13,29 +13,5 @@
    <body>
       <noscript>You need to enable JavaScript to run this app.</noscript>
       <app-root id="chatvia-app"></app-root>
-      <script>
-         window.addEventListener("unhandledrejection", function (e) {
-            alert("RAHUL" + e.reason.messagea); // i want to send the error to backend here
-         });
-
-         window.onerror = function (msg, url, lineNo, columnNo, error) {
-            const string = msg.toLowerCase();
-            const substring = "script error";
-            if (string.indexOf(substring) > -1) {
-               alert("RAHUL" + "Script Error: See Browser Console for Detail"); // i want to send the error to backend here
-            } else {
-               const message = [
-                  "Message: " + msg,
-                  "URL: " + url,
-                  "Line: " + lineNo,
-                  "Column: " + columnNo,
-                  "Error object: " + JSON.stringify(error),
-               ].join(" - ");
-
-               alert("RAHUL" + message); // i want to send the error to backend here
-            }
-            return false;
-         };
-      </script>
    </body>
 </html>
