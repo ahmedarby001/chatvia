@@ -96,6 +96,7 @@ class LogupPage extends React.Component {
 
    onInputPhotoChange = (e: any) => {
       if (e.target.files && e.target.files[0]) {
+         console.log(e.target.files[0])
          this.setState({
             ...this.state,
             photoUrl: URL.createObjectURL(e.target.files[0])
@@ -172,7 +173,7 @@ class LogupPage extends React.Component {
                   </form>
                </div>
                <footer>
-                  <p>Already have an account? <Link to="/join">Sign in</Link></p>
+                  <p>Already have an account? <Link to="/login">Sign in</Link></p>
                   <p>©2020 Chatvia. Crafted with <span>&#10084;</span> by Ahmed Arby</p>
                </footer>
             </div>
