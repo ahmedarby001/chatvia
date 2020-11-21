@@ -1,14 +1,14 @@
 import React from 'react';
 import './style.scss';
-import { Link } from 'react-router-dom';
+import { Link, RouteChildrenProps } from 'react-router-dom';
 import FullLogo from '../../assets/images/full_logo.png';
 import TextField from '../../components/textfield';
-import { Email, Password, Plus, User } from '../../assets/SVGIcons';
+import { Email, Password, Plus, User, TwitterLogo, GoogleLogo, FacebookLogo } from '../../assets/SVGIcons';
 import { CheckEmail, CheckPassword } from '../../helper/CheckInput';
 import PlaceholderPhoto from '../../assets/images/user-placeholder.png';
 
 
-class LogupPage extends React.Component {
+class LogupPage extends React.Component<RouteChildrenProps> {
    InputPhotoRef: React.RefObject<HTMLInputElement>;
 
    constructor(props: any) {
@@ -69,7 +69,7 @@ class LogupPage extends React.Component {
       }
    }
 
-   Submit(e: any) {
+   async Submit(e: any) {
       e.preventDefault();
       const emailErr = CheckEmail(this.state.email_val.trim());
       const passErr = CheckPassword(this.state.pass_val.trim());
@@ -89,7 +89,6 @@ class LogupPage extends React.Component {
             pass_err: '',
             name_err: ''
          }));
-         console.log('Login success:', this.state);
       }
       
    }
@@ -170,6 +169,12 @@ class LogupPage extends React.Component {
                      <this.EmailTextField />
                      <this.PasswordTextField />
                      <button onClick={ this.Submit.bind(this) }>Sign in</button>
+                     <div className="or-line"></div>
+                     <div className="or-sign">
+                        <div className="or-sign-item" title="Sign with Google account"><GoogleLogo /></div>
+                        <div className="or-sign-item" title="Sign with Facebook account"><FacebookLogo /></div>
+                        <div className="or-sign-item" title="Sign with Twitter account"><TwitterLogo /></div>
+                     </div>
                   </form>
                </div>
                <footer>

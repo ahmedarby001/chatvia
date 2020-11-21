@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import FullLogo from '../../assets/images/full_logo.png';
 import TextField from '../../components/textfield';
 import CheckBox from '../../components/checkbox';
-import { Email, Password } from '../../assets/SVGIcons';
+import { Email, FacebookLogo, GoogleLogo, Password, TwitterLogo } from '../../assets/SVGIcons';
 import { CheckEmail, CheckPassword } from '../../helper/CheckInput';
 
 
@@ -55,7 +55,7 @@ class LoginPage extends React.Component {
       }
    }
 
-   Submit(e: any) {
+   async Submit(e: any) {
       e.preventDefault();
       const emailErr = CheckEmail(this.state.email_val.trim());
       const passErr = CheckPassword(this.state.pass_val.trim());
@@ -68,7 +68,7 @@ class LoginPage extends React.Component {
          }));
       } else {
          this.setState((state: any) => ({ ...state, email_err: '', pass_err: '' }));
-         console.log('Login success:', this.state);
+         
       }
       
    }
@@ -138,6 +138,12 @@ class LoginPage extends React.Component {
                      </Link>
                      <this.CustomCheckBox />
                      <button onClick={ this.Submit.bind(this) }>Sign in</button>
+                     <div className="or-line"></div>
+                     <div className="or-sign">
+                        <div className="or-sign-item" title="Sign with Google account"><GoogleLogo /></div>
+                        <div className="or-sign-item" title="Sign with Facebook account"><FacebookLogo /></div>
+                        <div className="or-sign-item" title="Sign with Twitter account"><TwitterLogo /></div>
+                     </div>
                   </form>
                </div>
                <footer>

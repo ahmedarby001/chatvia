@@ -1,0 +1,245 @@
+.sign-container {
+   width: 100%;
+   padding: 90px 15px 50px 15px;
+   margin: 0 auto;
+
+   .sign-row {
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+
+      .sign-logo {
+         display: block;
+         width: 140px;
+         height: 30px;
+         object-fit: contain;
+         object-position: center;
+         margin: 0 auto;
+      }
+
+      h1, p {
+         display: block;
+         text-align: center;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      & > h1 {
+         color: #495057;
+         font-size: 21px;
+         font-weight: 600;
+         margin-top: 3rem;
+      }
+
+      & > p {
+         color: #7a7f9a;
+         font-size: 15px;
+         margin-top: 8px;
+      }
+
+      .sign-card {
+         position: relative;
+         width: 100%;
+         word-wrap: break-word;
+         background-color: #fff;
+         border: 1px solid #f5f7fb;
+         border-radius: .25rem;
+         padding: 1.5rem;
+         margin: 1.5rem 0 0 0;
+
+         form {
+            display: block;
+            padding: 1rem;
+
+            .alert-msg {
+               color: #036f53;
+               text-align: center!important;
+               background-color: #cdf7ec;
+               border: 1px solid #b9f4e4;
+               border-radius: .25rem;
+               padding: .75rem 1.25rem;
+               margin-bottom: 1rem;
+            }
+
+            .user-photo {
+               position: relative;
+               width: 85px;
+               height: 85px;
+               border: 2px solid #a5a5a5;
+               border-radius: 50%;
+               cursor: pointer;
+               margin: 0 auto 15px;
+
+               img {
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 50%;
+                  object-fit: cover;
+                  object-position: center;
+               }
+
+               .plus-icon {
+                  position: absolute;
+                  width: 15px;
+                  height: 15px;
+                  top: 78%;
+                  left: 76%;
+               }
+
+               .photo-input-file {
+                  position: fixed;
+                  display: none;
+                  width: 0;
+                  height: 0;
+                  opacity: 0;
+                  top: -30px;
+                  left: -30px;
+               }
+            }
+
+            .forget-pass {
+               display: block;
+               width: max-content;
+               color: #7a7f9a;
+               font-size: 13px;
+               text-decoration: none;
+               text-align: end;
+               margin: 10px 0 0 auto;
+            }
+
+            button {
+               width: 100%;
+               color: #fff;
+               font-size: 1rem;
+               font-weight: 600;
+               border: none;
+               outline: none;
+               background-color: #7269ef;
+               border-color: #7269ef;
+               border-radius: 5px;
+               transition: background-color 0.3s ease, box-shadow 0.3s ease;
+               cursor: pointer;
+               padding: 10px;
+               margin-top: 1.5rem;
+            
+               &:hover {
+                  background-color: #5145ef;
+                  border-color: #5145ef;
+               }
+            
+               &:focus, &:focus-within {
+                  background-color: #5145ef;
+                  border-color: #5145ef;
+                  box-shadow: 0 0 0 0.15rem rgba(135, 128, 241, 0.4);
+               }
+            
+               &:disabled {
+                  background-color: #504aa3;
+                  border-color: #504aa3;
+                  cursor: no-drop;
+               }
+            }
+
+            .or-line {
+               position: relative;
+               width: 70%;
+               height: 2px;
+               background: rgba(0, 0, 0, 0.06);
+               margin: 35px auto;
+            
+               &::after {
+                  position: absolute;
+                  content: 'OR';
+                  color: rgba(0, 0, 0, 0.2);
+                  font-size: 15px;
+                  background: #ffffff;
+                  transform: translate(-50%, -50%);
+                  padding: 0 10px;
+                  top: 50%;
+                  left: 50%;
+               }
+            }
+
+            .or-sign {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               padding: 0 10px;
+               margin-top: 15px;
+            
+               .or-sign-item {
+                  position: relative;
+                  display: inline-block;
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 5px;
+                  border: 1px solid #e8e8e8;
+                  cursor: pointer;
+                  transition: box-shadow 0.3s ease;
+            
+                  &:hover {
+                     box-shadow: 0 0 7px rgba(0, 0, 0, 0.08);
+                  }
+            
+                  &:nth-of-type(2) {
+                     margin: 0 20px;
+                  }
+            
+                  svg {
+                     position: absolute;
+                     width: 30px;
+                     height: 30px;
+                     transform: translate(-50%, -50%);
+                     top: 50%;
+                     left: 50%;
+                  }
+               }
+            }            
+         }
+      }
+
+      footer {
+         width: 100%;
+         margin-top: 2rem;
+
+         p {
+            span {
+               color: #ef476f;
+            }
+
+            a {
+               color: #7269ef;
+               text-decoration: none;
+            }
+
+            &:last-of-type {
+               margin-top: 15px;
+            }
+         }
+      }
+   }
+}
+
+// Media Query's
+@media (min-width: 576px) {
+   .sign-container {
+       max-width: 540px;
+   }
+}
+
+@media (min-width: 768px) {
+   .sign-container {
+       max-width: 720px;
+   }
+}
+@media (min-width: 992px) {
+   .sign-container {
+       max-width: 960px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .sign-container {
+       max-width: 1140px;
+   }
+}

@@ -66,7 +66,6 @@
    .err-msg {
       width: 100%;
       color: #ef476f;
-      font-size: 80%;
       margin: .25rem 0 0 0;
    }
 
@@ -89,6 +88,28 @@
          border-top: #f00 solid 1px !important;
          border-right: #f00 solid 1px !important;
          border-bottom: #f00 solid 1px !important;
+      }
+   }
+}
+
+// Media Query's
+@media (max-width: 400px) {
+   .text-field-container {
+      label {
+         font-size: 0.8rem !important;
+      }
+
+      .text-field {
+         height: 40px !important;
+         padding: 0 0 0 40px !important;
+
+         .icon {
+            width: 40px !important;
+         }
+
+         input::placeholder {
+            font-size: 0.8rem !important;
+         }
       }
    }
 }
