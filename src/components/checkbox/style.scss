@@ -1,0 +1,55 @@
+.check-box {
+   display: flex;
+   width: max-content;
+   cursor: pointer;
+   align-items: center;
+   user-select: none;
+   margin: 10px 0;
+
+   &:active > div:first-of-type {
+      border-color: #c2befa;
+      background-color: #c2befa;
+   }
+
+   .content {
+      position: relative;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #adb5bd;
+      border-radius: .25rem;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+
+      svg {
+         position: absolute;
+         width: 0;
+         height: 0;
+         fill: #fff;
+         opacity: 0;
+         transform: translate(-50%, -50%);
+         transition: width 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+            ,height 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s ease;
+         top: 50%;
+         left: 50%;
+      }
+
+      &.checked {
+         border-color: #7269ef !important;
+         background-color: #7269ef !important;
+
+         svg {
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+         }
+      }
+   }
+
+   label {
+      color: #495057;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-left: 8px;
+   }
+}

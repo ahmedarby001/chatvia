@@ -1,0 +1,132 @@
+.sign-container {
+   width: 100%;
+   padding: 90px 15px 50px 15px;
+   margin: 0 auto;
+
+   .sign-row {
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+
+      .sign-logo {
+         display: block;
+         width: 140px;
+         height: 30px;
+         object-fit: contain;
+         object-position: center;
+         margin: 0 auto;
+      }
+
+      h1, p {
+         display: block;
+         width: max-content;
+         text-align: center;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      & > h1 {
+         color: #495057;
+         font-size: 21px;
+         font-weight: 600;
+         margin-top: 3rem;
+      }
+
+      & > p {
+         color: #7a7f9a;
+         font-size: 15px;
+         margin-top: 8px;
+      }
+
+      .sign-card {
+         position: relative;
+         width: 100%;
+         word-wrap: break-word;
+         background-color: #fff;
+         border: 1px solid #f5f7fb;
+         border-radius: .25rem;
+         padding: 1.5rem;
+         margin: 1.5rem 0 0 0;
+
+         form {
+            display: block;
+            padding: 1rem;
+
+            .forget-pass {
+               display: block;
+               width: max-content;
+               color: #7a7f9a;
+               font-size: 13px;
+               text-decoration: none;
+               text-align: end;
+               margin: 15px 0 0 auto;
+            }
+
+            button {
+               width: 100%;
+               color: #fff;
+               font-size: 1rem;
+               font-weight: 600;
+               border: none;
+               outline: none;
+               background-color: #7269ef;
+               border-color: #7269ef;
+               border-radius: 5px;
+               cursor: pointer;
+               padding: 10px;
+               margin-top: 1.5rem;
+            
+               &:disabled {
+                  background-color: #504aa3;
+                  border-color: #504aa3;
+                  cursor: no-drop;
+               }
+            }
+         }
+      }
+
+      footer {
+         width: 100%;
+         margin-top: 2rem;
+
+         p {
+            span {
+               color: #ef476f;
+            }
+
+            a {
+               color: #7269ef;
+               text-decoration: none;
+            }
+
+            &:last-of-type {
+               margin-top: 15px;
+            }
+         }
+      }
+   }
+}
+
+// Media Query's
+@media (min-width: 576px) {
+   .sign-container {
+       max-width: 540px;
+   }
+}
+
+@media (min-width: 768px) {
+   .sign-container {
+       max-width: 720px;
+   }
+}
+@media (min-width: 992px) {
+   .sign-container {
+       max-width: 960px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .sign-container {
+       max-width: 1140px;
+   }
+}
