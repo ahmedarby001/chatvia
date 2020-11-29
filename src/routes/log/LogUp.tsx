@@ -89,6 +89,7 @@ class LogupPage extends React.Component<RouteChildrenProps> {
             pass_err: '',
             name_err: ''
          }));
+         console.log(this.state)
       }
       
    }

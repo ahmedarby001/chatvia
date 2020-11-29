@@ -1,0 +1,152 @@
+@mixin child_center($target) {
+   position: relative;
+
+   #{$target} {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+   }
+}
+
+@mixin static_height($width, $height) {
+   @if $width != null {
+      width: $width;
+      min-width: $width;
+      max-width: $width;
+   }
+
+   @if $height != null {
+      height: $height;
+      min-height: $height;
+      max-height: $height;
+   }
+}
+
+.side-bar {
+   position: fixed;
+   width: 75px;
+   height: 100vh;
+   background: #ffffff;
+   box-shadow: 0 2px 4px rgba(15, 34, 58, 0.1);
+   padding: 5px;
+   top: 0;
+   left: 0;
+
+   .logo {
+      @include static_height(100%, 60px);
+      
+      .logo-link {
+         display: block;
+         @include static_height(100%, 100%);
+         @include child_center(svg);
+
+         svg { @include static_height(30px, 30px); }
+      }
+   }
+
+   .nav {
+      display: flex;
+      width: 100%;
+      flex-grow: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 30px 0;
+
+      .nav-item {
+         border-radius: 10px;
+         transition: background 0.3s ease;
+         cursor: pointer;
+         @include static_height(100%, 55px);
+         @include child_center(svg);
+
+         svg {
+            width: 24px;
+            height: 24px;
+            fill: #878a92;
+            transition: fill 0.4s ease;
+            @include static_height(24px, 24px);
+         }
+
+         &:not(:first-of-type) {
+            margin-top: 10px;
+         }
+
+         &.active {
+            background: #f7f7ff;
+            
+            svg {
+               fill: #7269ef;
+            }
+         }
+      }
+   }
+
+   .toggle-theme {
+      cursor: pointer;
+      @include child_center(svg);
+      @include static_height(100%, 55px);
+
+      svg {
+         width: 25px;
+         height: 25px;
+         fill: #878a92;
+         @include static_height(25px, 25px);
+      }
+   }
+
+   .user-pic {
+      user-select: none;
+      cursor: pointer;
+      margin-top: 10px;
+      @include static_height(100%, 55px);
+      @include child_center(img);
+
+      img {
+         border: 1px solid #878a92;
+         border-radius: 50%;
+         object-fit: cover;
+         object-position: center;
+         @include static_height(35px, 35px);
+      }
+   }
+
+   .drop-down {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 5px;
+      z-index: 1000000;
+      clip-path: circle(0% at 0% 50%);
+      transition: clip-path 0.5s ease;
+      box-shadow: 0 2px 4px rgba(15, 34, 58, 0.2);
+      padding: 5px 0;
+      left: 90%;
+      bottom: 15px;
+
+      &.open {
+         clip-path: circle(200% at 0% 50%);
+      }
+
+      .item {
+         width: 170px;
+         transition: background 0.3s ease;
+         cursor: pointer;
+         padding: 5px 20px;
+
+         &:hover {
+            background: rgba(5, 103, 250, 0.02);
+         }
+
+         svg {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            fill: #9d9fa6;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 20px;
+         }
+      }
+   }
+}

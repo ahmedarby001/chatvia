@@ -68,7 +68,7 @@ class LoginPage extends React.Component {
          }));
       } else {
          this.setState((state: any) => ({ ...state, email_err: '', pass_err: '' }));
-         
+         console.log(this.state)
       }
       
    }
