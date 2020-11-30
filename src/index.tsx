@@ -6,6 +6,8 @@ import 'react-app-polyfill/stable';
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
+import { Provider } from 'react-redux';
+import store from './store';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Firebase from "./database";
@@ -21,17 +23,19 @@ import {
 Firebase.analytics();
 
 const App = () => (
-  <BrowserRouter>
-    <ScrollToTop>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/join" component={LogupPage} />
-          <Route path="/forget-password" component={ForgetPasswordPage} />
-          <Route path="/chat" component={ChatPage} />
-        </Switch>
-    </ScrollToTop>
-  </BrowserRouter>
+  <Provider store={ store }>
+    <BrowserRouter>
+      <ScrollToTop>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/join" component={LogupPage} />
+            <Route path="/forget-password" component={ForgetPasswordPage} />
+            <Route path="/chat" component={ChatPage} />
+          </Switch>
+      </ScrollToTop>
+    </BrowserRouter>
+  </Provider>
 );
 
 ReactDOM.render(<App />, document.getElementById("chatvia-app"));
